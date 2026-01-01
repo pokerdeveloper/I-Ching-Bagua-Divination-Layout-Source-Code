@@ -1,0 +1,65 @@
+--[[
+    大厅服务
+--]]
+
+
+local Service = require("services.service");
+local HallService = class("HallService", Service);
+
+function HallService:ctor()
+    HallService.super.ctor(self, "SERVICE_TYPE_HALL", "HallProto");
+end
+
+function HallService:onClear()
+
+end
+
+function HallService:handleResponse(msgType, msgId, msgData)
+    local msgName = self:enumName("ActionName", msgId, "XGameProto");
+    if msgName == "HALL_MATCH_ROOM_LIST" then
+        local resp = self:decode("MatchRoomListResp", msgData);
+        log.net("HALL_MATCH_ROOM_LIST resp:", log.dumpTable(resp));
+        if self:isSuccess(resp.iResultID) then
+            coli.eventManager.notify(coli.Events.E_Hall_SportRoomList, resp);
+        else
+            self:handleError(resp.iResultID);
+        end
+    end
+end
+
+function HallService:handleNotify(msgType, msgId, msgData)
+
+end
+
+-- 竞技赛事房间列表
+function HallService:reqSportRoomList(datas)
+    log.net("Post MatchRoomListReq:", log.dumpTable(datas));
+    local msgId = self:enumVal("ActionName", "HALL_MATCH_ROOM_LIST", "XGameProto");
+    local msgType = coli.netService.MSGTYPE_REQUEST;
+    local req = self:encode("MatchRoomListReq", {
+        iPage = datas.page,
+        onlineGame = datas.online,
+        vecGameStatus = datas.stateList or nil,
+        bSelfRoom = datas.bOur or false,
+        iOffsetDay = datas.date or -1,
+    });
+    
+    local msg = self:createUnencryptMsg(msgType, msgId, req);
+    local httpService = coli.serviceManager.httpService;
+    httpService.POST("/hall", msg);
+    httpService.addListenResp(msg.msgHead.nMsgID, function(respDatas)
+        self:respSportRoomList(respDatas);
+    end);
+    coli.utils.showNetLoading(nil, {delay = 0.5});
+end
+function HallService:respSportRoomList(respDatas)
+    local resp = self:decode("MatchRoomListResp", respDatas);
+    log.net("Post MatchRoomListResp:", log.dumpTable(resp));
+    if self:isSuccess(resp.iResultID) then
+        coli.eventManager.notify(coli.Events.E_Hall_SportRoomList, resp);
+    else
+        self:handleError(resp.iResultID);
+    end
+end
+
+return HallService;

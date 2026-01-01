@@ -1,0 +1,37 @@
+--[[
+    游戏状态服务
+--]]
+local Service = require("services.service");
+local StateService = class("StateService", Service);
+
+function StateService:ctor()
+    StateService.super.ctor(self, "SERVICE_TYPE_PUSH", "UserStateProto");
+    self.roomId = "";
+end
+
+function StateService:handleResponse(msgType, msgId, msgData)
+    local msgName = self:enumName("ActionName", msgId, "XGameProto");
+    log.info("msgName:", msgName);
+    if msgName == "PUSH_GET_USER_STATE" then
+        local resp = self:decode("GetGameStateResp", msgData);
+        log.net("GetGameStateResp:", coli.log.dumpTable(resp));
+        if self:isSuccess(resp.resultCode) then
+            coli.eventManager.notify(coli.Events.E_State_GameState, resp);
+        else
+            self:handleError(resp.resultCode);
+        end
+    end
+end
+
+-- 获取用户游戏状态
+function StateService:reqGetGameState(uid)
+    log.net("PUSH_GET_USER_STATE:", uid);
+    local msgType = coli.netService.MSGTYPE_REQUEST;
+    local msgId = self:enumVal("ActionName", "PUSH_GET_USER_STATE", "XGameProto");
+    local req = self:encode("GetGameStateReq", {
+        uid = uid
+    });
+    self:sendOne(msgType, msgId, req);
+end
+
+return StateService;
