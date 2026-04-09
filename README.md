@@ -1,7 +1,7 @@
 # I-Ching-Bagua-Divination-Layout-Source-Code
 周易源码，周易八卦排盘源码，國學術數玄學，五行八卦，四柱八字，大六壬，阴阳排盘，八字陰陽，奇門遁甲，紫微斗數，七政四余集大成者结合，数十位占卜师多年研究心得，通过网页展示出来；
 Traditional Chinese Metaphysical Systems including I Ching Bagua, Yin-Yang & Five Elements theory, GanZhi calendrics, BaZi Four Pillars charting, Zi Wei Dou Shu astrology, Qi Men Dun Jia divination, Qi Zheng Si Yu planetary analysis, Purple Star fortune interpretations, Xing-Chong relationship analysis, Shen Sha deity/malefic classifications, and related chart calculation methodologies.
-全套源码出；联系Telegram：@xuzongbin001； 邮箱：ttpoker733@gmail.com
+全套源码出；联系Telegram：@alibabama401； 邮箱：ttpoker733@gmail.com
 
 <img width="2471" height="1285" alt="屏幕截图 2025-03-15 113242" src="https://github.com/user-attachments/assets/7db50616-71ef-45e0-91cc-1cd05eea57ad" />
 <img width="2522" height="1364" alt="屏幕截图 2024-10-29 115350" src="https://github.com/user-attachments/assets/2c5e4687-3b4d-446e-a632-ad999638ec44" />
