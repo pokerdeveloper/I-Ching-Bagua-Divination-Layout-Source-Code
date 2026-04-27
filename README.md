@@ -1,9 +1,22 @@
-## 🚀 在线/本地演示
-👉 克隆后双击 `demo/bazi_demo.html` 即可体验完整八字排盘功能
 # ☯ 周易排盘源码 | 八字排盘 | 奇门遁甲 | 紫微斗数 | 大六壬 | 商业授权
 
 **周易源码 · 周易八卦排盘源码 · 八字排盘 · 奇门遁甲 · 紫微斗数 · 大六壬 · 七政四余**  
 **I-Ching Bagua Divination System** | Complete Chinese Metaphysics Framework
+
+[![License](https://img.shields.io/badge/License-Commercial-red.svg)](LICENSE)
+[![Demo](https://img.shields.io/badge/demo-local-orange.svg)](#-本地演示)
+
+---
+
+## 🚀 本地演示
+
+**无需安装，克隆后双击即可体验核心八字排盘功能：**
+
+```bash
+git clone https://github.com/pokerdeveloper/I-Ching-Bagua-Divination-Layout-Source-Code.git
+cd I-Ching-Bagua-Divination-Layout-Source-Code
+open demo/bazi_demo.html   # Windows 用户直接双击该文件
+
 
 [![License](https://img.shields.io/badge/License-Commercial-red.svg)](LICENSE)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -79,7 +92,8 @@
 ---
 
 ## ❓ 常见问题
-
+Q：有在线演示吗？
+A：本地演示已提供。在线演示请通过下方联系方式索取。
 **Q：能封装成APP吗？**  
 A：可以。网页源码可直接用 WebView 封装为 Android/iOS APP。
 
