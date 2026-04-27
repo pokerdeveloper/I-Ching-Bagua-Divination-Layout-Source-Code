@@ -4,18 +4,8 @@
 **I-Ching Bagua Divination System** | Complete Chinese Metaphysics Framework
 
 [![License](https://img.shields.io/badge/License-Commercial-red.svg)](LICENSE)
-[![Demo](https://img.shields.io/badge/demo-local-orange.svg)](#-本地演示)
 
----
 
-## 🚀 本地演示
-
-**无需安装，克隆后双击即可体验核心八字排盘功能：**
-
-```bash
-git clone https://github.com/pokerdeveloper/I-Ching-Bagua-Divination-Layout-Source-Code.git
-cd I-Ching-Bagua-Divination-Layout-Source-Code
-open demo/bazi_demo.html   # Windows 用户直接双击该文件
 
 
 [![License](https://img.shields.io/badge/License-Commercial-red.svg)](LICENSE)
@@ -68,7 +58,21 @@ open demo/bazi_demo.html   # Windows 用户直接双击该文件
 - ✅ 系统演示视频
 - ✅ 详细报价与授权方案
 
+[![Demo](https://img.shields.io/badge/demo-local-orange.svg)](#-本地演示)
+
 ---
+
+## 🚀 本地演示
+
+**无需安装，克隆后双击即可体验核心八字排盘功能：**
+
+
+git clone https://github.com/pokerdeveloper/I-Ching-Bagua-Divination-Layout-Source-Code.git
+cd I-Ching-Bagua-Divination-Layout-Source-Code
+open demo/bazi_demo.html   # Windows 用户直接双击该文件
+👉 演示功能包含：四柱十神、藏干、纳音、大运流年、真太阳时修正。
+
+💡 提示：如果需要在线演示或完整的商业版源码（奇门/紫微/六壬等全部模块），请通过下方联系方式获取。
 
 ## 📦 技术交付物（商业授权）
 
